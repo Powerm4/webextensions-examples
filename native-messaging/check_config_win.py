@@ -7,6 +7,7 @@ Currently requires Python 3.
 If you find more issues with setting this up, let's see if we can add to this
 script.
 '''
+
 import json
 import os
 import re
@@ -41,7 +42,7 @@ if not os.path.exists(json_path):
 try:
     bat_data = json.load(open(json_path, 'r'))
 except json.decoder.JSONDecodeError:
-    raise ValueError('Parsing error. Is {} a JSON file?'.format(json_path))
+    raise ValueError(f'Parsing error. Is {json_path} a JSON file?')
 
 bat_path = bat_data['path']
 print('Path from JSON is:', bat_path)
